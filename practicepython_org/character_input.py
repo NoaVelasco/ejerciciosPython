@@ -7,8 +7,7 @@ anioactual = hoy.year
 
 def centenario(n):
     global anioactual
-    diferencia = 100 - n
-    cumple = anioactual + diferencia
+    cumple = anioactual - n + 100
     print("Cumplirás 100 años en ", cumple)
 
 

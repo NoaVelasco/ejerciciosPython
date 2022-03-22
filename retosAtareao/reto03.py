@@ -14,9 +14,10 @@ import re  # Para buscar o reemplazar
 def main():
 
     rutaDiogenes = path.join(path.expanduser(
-        "~"), '.config\diogenes\diogenes.conf')
+        "~"), '.config\\diogenes\\diogenes.conf')
 
     # ¿Existe el archivo config? Si no, se crea:
+    # No es buen condicional según PEP8, pero no sé cómo hacerlo si no.
 
     if path.isfile(rutaDiogenes) == False:
         with open(rutaDiogenes, "w") as f:
@@ -28,9 +29,9 @@ def main():
         dwnldDir = f.readline()
 
     # Aisla el directorio con expresiones regulares:
-    
+
     patron = re.compile(r'"(\S+)"')
-    reemplazo3=re.findall(patron, dwnldDir)
+    reemplazo3 = re.findall(patron, dwnldDir)
 
     print(
         f"Imágenes JPG en el directorio {reemplazo3[0]}: \n-----------------------------")

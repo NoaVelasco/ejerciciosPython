@@ -1,37 +1,21 @@
-# if __name__ == '__main__':
-#     pyStudents = []
-#     for _ in range(int(input())):
-#         name = input()
-#         score = float(input())
-#         student = [name, score]
-#         pyStudents.append(student)
-        
-        
+def diagonalDifference(arr):
+    # Write your code here
+    dia1 = 0
+    dia2 = 0
+    for ar in arr:
+        m = arr.index(ar)
+        dia1 += ar[m]
+        dia2 += ar[-m-1]
+    return abs(dia1-dia2)
 
-# pyStudents = [['Harry', 37.21], ['Berry', 37.21], [
-#     'Tina', 37.2], ['Akriti', 41], ['Harsh', 39]]
-pyStudents = [['Harry', 36], ['Berry', 39], [
-    'Tina', 46.2], ['Akriti', 41], ['Harsh', 39]]
+# n = int(input().strip())
 
+# arr = []
 
-def nota(n):
-    return n[1]
-   
+# for _ in range(n):
+#     arr.append(list(map(int, input().rstrip().split())))
+arr = [[11, 2, 4], [4, 5, 6], [10, 8, -12]]
 
-pyStudents.sort(key=nota)
+result = diagonalDifference(arr)
 
-print(pyStudents)
-mejor = pyStudents[0][1]
-
-print(mejor)
-
-segundones = list(filter(lambda nota:nota[1] != mejor, pyStudents))
-
-print(segundones)
-
-resultado = [x for x in segundones if x[1] == segundones[0][1]]
-
-for i in sorted(resultado):
-    print(i[0])
-
-        
+print (result)

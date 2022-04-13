@@ -4,7 +4,7 @@
 if __name__ == '__main__':
     # N = int(input())
     # with open('./listcmd.txt', 'r', encoding='utf-8') as f:
-    with open('RetosEjerExtr/hackerrank/listcmd.txt', 'r', encoding='utf-8') as f:
+    with open('listcmd.txt', 'r', encoding='utf-8') as f:
         lectura = f.read().splitlines()
 
     def sorting(lista):

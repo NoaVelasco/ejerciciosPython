@@ -11,6 +11,7 @@ capturas/
 .ipynb_checkpoints/
 __pycache__/
 *.code-workspace
+pokemon_battle_system_yt-master/
 
 # Compiled source #
 ###################

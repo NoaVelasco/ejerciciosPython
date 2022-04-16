@@ -3,6 +3,7 @@
 helloworld.py
 capturas/
 *_pruebas.py
+*_pruebas.ipynb
 .gitignore
 
 # En mi caso #

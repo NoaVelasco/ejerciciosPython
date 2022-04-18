@@ -1,38 +1,38 @@
-import constants
-import models
+from constants import *
+from models import *
 
 # Define pokemons with its stats
 
-pokemon1 = models.Pokemon("Bulbasaur", 100, "grass", "poison")
-pokemon2 = models.Pokemon("Charmander", 100, "fire", None)
+pokemon1 = Pokemon("Bulbasaur", 100, "grass", "poison")
+pokemon2 = Pokemon("Charmander", 100, "fire", None)
 pokemon1.current_hp = 45
 pokemon2.current_hp = 39
 
 # /-----------------------STATS------------------------------/
 pokemon1.stats = {
-    constants.HP: 45,
-    constants.ATTACK: 49,
-    constants.DEFENSE: 49,
-    constants.SPATTACK: 65,
-    constants.SPDEFENSE: 65,
-    constants.SPEED: 45
+    HP: 45,
+    ATTACK: 49,
+    DEFENSE: 49,
+    SPATTACK: 65,
+    SPDEFENSE: 65,
+    SPEED: 45
 }
 
 pokemon2.stats = {
-    constants.HP: 39,
-    constants.ATTACK: 52,
-    constants.DEFENSE: 43,
-    constants.SPATTACK: 80,
-    constants.SPDEFENSE: 65,
-    constants.SPEED: 65
+    HP: 39,
+    ATTACK: 52,
+    DEFENSE: 43,
+    SPATTACK: 80,
+    SPDEFENSE: 65,
+    SPEED: 65
 }
 
 
 # /-----------------------ATTACKS------------------------------/
-pokemon1.attacks = [models.Attack(
-    "scratch", "normal", constants.PHYSICAL, 10, 10, 100)]
-pokemon2.attacks = [models.Attack(
-    "scratch", "normal", constants.PHYSICAL, 10, 10, 100)]
+pokemon1.attacks = [Attack(
+    "scratch", "normal", PHYSICAL, 10, 10, 100)]
+pokemon2.attacks = [Attack(
+    "scratch", "normal", PHYSICAL, 10, 10, 100)]
 
 
 
@@ -43,23 +43,23 @@ def ask_command(pokemon):
         tmp_command = input(f"What should {pokemon.name} do?\n").split(" ")
         if len(tmp_command) == 2:
             try:
-                if tmp_command[0] == constants.DO_ATTACK and 0 <= int(tmp_command[1]) < 4:
-                    command = models.Command(
-                        {constants.DO_ATTACK: int(tmp_command[1])})
+                if tmp_command[0] == DO_ATTACK and 0 <= int(tmp_command[1]) < 4:
+                    command = Command(
+                        {DO_ATTACK: int(tmp_command[1])})
             except Exception:
                 pass
     return command
 
 
 # /------------------START_BATTLE--------------------------/
-battle = models.Battle(pokemon1, pokemon2)
+battle = Battle(pokemon1, pokemon2)
 
 while not battle.is_finished():
     # First ask for command
     command1 = ask_command(pokemon1)
     command2 = ask_command(pokemon2)
 
-    turn = models.Turn()
+    turn = Turn()
     turn.command1 = command1
     turn.command2 = command2
 

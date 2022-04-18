@@ -49,4 +49,5 @@ def comp_guess(x):
     print(f'¡Bien! He acertado el número {guess_n}. 🥳')
 
 
+guess(20)
 comp_guess(100)

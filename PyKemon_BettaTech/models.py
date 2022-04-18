@@ -1,4 +1,4 @@
-import constants
+from constants import *
 
 
 class Battle:
@@ -14,29 +14,28 @@ class Battle:
             self.print_winner()
         return finished
 
+    def print_winner(self):
+        if self.pokemon1.current_hp <= 0 < self.pokemon2.current_hp:
+            print(f"{self.pokemon1.name} won in {str(self.actual_turn)} turns!!")
+        elif self.pokemon2.current_hp <= 0 < self.pokemon1.current_hp:
+            print(f"{self.pokemon1.name} won in {str(self.actual_turn)} turns!!")
+        else:
+            print("DOUBLE KO!")
+
     def execute_turn(self, turn):
         # Logic to execute a turn inside a battle
         command1 = turn.command1
         command2 = turn.command2
         attack1 = None
         attack2 = None
-        if constants.DO_ATTACK in command1.action.keys():
-            attack1 = self.pokemon1.attacks[command1.action[constants.DO_ATTACK]]
-        if constants.DO_ATTACK in command1.action.keys():
-            attack1 = self.pokemon2.attacks[command2.action[constants.DO_ATTACK]]
-
+        if DO_ATTACK in command1.action.keys():
+            attack1 = self.pokemon1.attacks[command1.action[DO_ATTACK]]
+        if DO_ATTACK in command1.action.keys():
+            attack2 = self.pokemon2.attacks[command2.action[DO_ATTACK]]
         # Damage Formula. Execute attacks
         self.pokemon2.current_hp -= attack1.power
         self.pokemon1.current_hp -= attack2.power
         self.actual_turn += 1
-
-    def print_winner(self):
-        if self.pokemon1.current_hp <= 0 < self.pokemon2.current_hp:
-            print(f"{self.pokemon1.name} won in {str(self.actual_turn)} turns!!")
-        elif self.pokemon2.current_hp <= 0 < self.pokemon1.current_hp:
-            print(f"{self.pokemon2.name} won in {str(self.actual_turn)} turns!!")
-        else:
-            print("DOUBLE KO!")
 
     def print_current_status(self):
         print(f"{self.pokemon1.name} has {str(self.pokemon1.current_hp)} left!")

@@ -12,6 +12,7 @@ capturas/
 __pycache__/
 *.code-workspace
 pokemon_battle_system_yt-master/
+settings.json
 
 # Compiled source #
 ###################

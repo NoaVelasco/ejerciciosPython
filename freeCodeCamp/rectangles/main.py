@@ -35,6 +35,11 @@ class Rectangle():
 
         return string
 
+    def get_amount_inside(self, polygon):
+        how_many = (self.width // polygon.width) * \
+            (self.height // polygon.height)
+        return how_many
+
 
 class Square(Rectangle):
 

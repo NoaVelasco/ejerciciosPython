@@ -9,10 +9,12 @@ capturas/
 # En mi caso #
 ###################
 .ipynb_checkpoints/
+.vscode
 __pycache__/
 *.code-workspace
 pokemon_battle_system_yt-master/
 settings.json
+RetoPythonAtareaoFork/
 
 # Compiled source #
 ###################

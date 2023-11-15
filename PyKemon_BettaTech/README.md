@@ -1,1 +1,0 @@
-Empecé a seguir unos tutoriales del youtuber BettaTech, pero estaban incompletos y terminó por eliminarlos, de manera que este ejercicio ha quedado incompleto.
